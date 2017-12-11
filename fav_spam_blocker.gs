@@ -15,8 +15,9 @@ function authCallback(request) {
 }
 
 
-var endpoint = "https://api.twitter.com/1.1/blocks/create.json"
+var endpoint_block = "https://api.twitter.com/1.1/blocks/create.json"
 var endpoint_revert = "https://api.twitter.com/1.1/blocks/destroy.json"
+var endpoint_kill = "https://api.twitter.com/1.1/users/report_spam.json"
 
 
 function zfill(number, size) {
@@ -26,13 +27,14 @@ function zfill(number, size) {
 }
 
 // ブロックを実行 セッティングに従ったブロックを行う。  Execute blocking.
-function kill_fav_spam() {
+function block_fav_spam() {
   for (i=0; i<Math.pow(10,num_digits); i++) {
     target_screen_name = user_name + zfill(i,num_digits);
     service  = twitter.getService();
-    response = service.fetch(endpoint, {
+    response = service.fetch(endpoint_block, {
         method: "POST",
-        payload: {screen_name:target_screen_name},
+        payload: {screen_name:target_screen_name,
+                  skip_status:"true"},
         muteHttpExceptions: true
   })
   }
@@ -45,7 +47,22 @@ function revert_fav_spam() {
     service  = twitter.getService();
     response = service.fetch(endpoint_revert, {
         method: "POST",
-        payload: {screen_name:target_screen_name},
+        payload: {screen_name:target_screen_name,
+                 skip_status:"true"},
+        muteHttpExceptions: true
+  })
+  }
+}
+
+// ユーザーを報告してブロックを実行 セッティングに従った報告・ブロックを行う。  Execute report and blocking.
+function kill_fav_spam() {
+  for (i=0; i<Math.pow(10,num_digits); i++) {
+    target_screen_name = user_name + zfill(i,num_digits);
+    service  = twitter.getService();
+    response = service.fetch(endpoint_kill, {
+        method: "POST",
+        payload: {screen_name:target_screen_name,
+                 perform_block:"true"},
         muteHttpExceptions: true
   })
   }
