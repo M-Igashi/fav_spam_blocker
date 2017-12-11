@@ -1,15 +1,15 @@
 
-// 認証をリセット（必須） 最初に実行して初期化する。
+// 認証をリセット（必須） 最初に実行して初期化する。  Reset Oauth, the first function you need to execute.
 function reset() {
   twitter.reset();
 }
 
-// 認証を行う（必須） 関数を実行し、ログに表示されるURLにアクセスして認証する。
+// 認証を行う（必須） 関数を実行し、ログに表示されるURLにアクセスして認証する。  Establishing Oauth, see view --> log, access the url shown, and get authorized.
 function authorize() {
   twitter.authorize();
 }
 
-// 認証後のコールバック（必須）特に触る必要はない。
+// 認証後のコールバック（必須）特に触る必要はない。  Callback, you do not need to touch this funciton.
 function authCallback(request) {
   return twitter.authCallback(request);
 }
@@ -25,7 +25,7 @@ function zfill(number, size) {
   return number;
 }
 
-// ブロックを実行 セッティングに従ったブロックを行う。
+// ブロックを実行 セッティングに従ったブロックを行う。  Execute blocking.
 function kill_fav_spam() {
   for (i=0; i<Math.pow(10,num_digits); i++) {
     target_screen_name = user_name + zfill(i,num_digits);
@@ -38,7 +38,7 @@ function kill_fav_spam() {
   }
 }
 
-// ブロックを解除 セッティングに従ったブロック解除を行う。
+// ブロックを解除 セッティングに従ったブロック解除を行う。  Execute unblocking.
 function revert_fav_spam() {
   for (i=0; i<Math.pow(10,num_digits); i++) {
     target_screen_name = user_name + zfill(i,num_digits);
