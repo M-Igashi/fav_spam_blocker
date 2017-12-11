@@ -9,7 +9,7 @@ Blocking script (Google Apps Script) for Twitter Fav-Spammers
 - setting.gsに必要事項を入れます。
 - fav_spam_blocker.gsのresetを実行します。
 - authorizeを実行、ログに表示されるURLをブラウザにコピペしてアプリを認証します。
-- kill_fav_spamを実行してスパマーをブロックします。
+- block_fav_spamを実行してスパマーをブロックします。revert_fav_spamはブロック解除、kill_fav_spamはブロックと同時に報告も行います。
 
 ------------------
 
@@ -18,6 +18,6 @@ Blocking script (Google Apps Script) for Twitter Fav-Spammers
 - Confiture setting.gs
 - Execute reset function in fav_spam_blocker.gs
 - Execute authorize, copy the URL shown in Log and paste in browser to authorize twitter app.
-- Execute kill_fav_spam to block the spammers.
+- Execute block_fav_spam to block the spammers. revert_fav_spam unblocks the accounts, kill_fav_spam performs reporting and blocking.
 
 
