@@ -8,7 +8,7 @@ var twitter = TwitterWebService.getInstance(
 // ブロックしたいクソ野郎
 
 var user_name = "Noamin"  // クソ野郎の名前
-var num_digits = 3  //クソ野郎の連番桁数
+var num_digits = 2  //クソ野郎の連番桁数
 
 
 /*
