@@ -11,6 +11,7 @@ Blocking script (Google Apps Script) for Twitter Fav-Spammers
 - authorizeを実行、ログに表示されるURLをブラウザにコピペしてアプリを認証します。
 - kill_fav_spamを実行してスパマーをブロックします。
 
+
 - Copy two .gs files to your GAS, and import `1rgo8rXsxi1DxI_5Xgo_t3irTw1Y5cxl2mGSkbozKsSXf2E_KBBPC3xTF` in library.  
 - Create Twitter app in apps.twitter.com . Callback url is https://script.google.com/d/xxxxYOUR_GAS_URLxxxxxx/usercallback
 - Confiture setup.gas
