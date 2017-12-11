@@ -1,44 +1,21 @@
-# fav_spam_blocker
-fav_spam_blocker_for_twitter
+# fav_spam_blocker_gs
+TwitterのファボスパムアカウントをブロックするスクリプトのGoogle Apps Script実装です。
 
-Mac-OSXで動作確認済。python3スクリプトです。
+Blocking script (Google Apps Script) for Twitter Fav-Spammers
 
-使用にはCONSUMER_KEY、CONSUMER_SECRET、TOKEN、TOKEN_SECRETの取得が必要です。
+## How to use
+- 2つの.gsファイルをGASにコピーしてライブラリ`1rgo8rXsxi1DxI_5Xgo_t3irTw1Y5cxl2mGSkbozKsSXf2E_KBBPC3xTF`をインポートします。
+- apps.twitter.com でtwitterアプリを作成します。コールバックurlは https://script.google.com/d/xxxxあなたのGAS_URLxxxxxx/usercallback です。
+- setup.gasに必要事項を入れます。
+- fav_spam_blocker.gsのresetを実行します。
+- authorizeを実行、ログに表示されるURLをブラウザにコピペしてアプリを認証します。
+- kill_fav_spamを実行してスパマーをブロックします。
 
-https://apps.twitter.com/
-
-上記リンクから登録し、各種KEYの取得が必要になります。参考リンク：http://phiary.me/twitter-api-key-get-how-to/
-
-`usage: fav_spam_blocker.py [-h] --consumer-key CONSUMER_KEY --consumer-secret
-                           CONSUMER_SECRET --token TOKEN --token-secret TOKEN_SECRET
-                           --user-name USER_NAME [--num-digits NUM_DIGITS]
-                          [--unlock]`
-
-文字＋連番のツイッターアカウントをブロックします。スクリプト内でtweepyを使用していますので、インストールが必要です。
-
-`pip3 install tweepy`
-
-例えば
-
-`python3 fav_spam_blocker.py --consumer-key CONSUMER_KEY 
-                             --consumer-secret CONSUMER_SECRET 
-                             --token TOKEN 
-                             --token-secret TOKEN_SECRET
-                             --user-name monarisa 
-                             --num-digits 2`
-
-を実行すると、@monarisa00 ~ @monarisa99 のツイッターアカウントを全てブロックします。num_digitsが数字の桁数を指します。--num-digits 3 であれば @monarisa000 ~ @monarisa999 のツイッターアカウントを全てブロックします。
-
-ブロック解除するときは --unlock オプションをつけて
-
-`python3 fav_spam_blocker.py --consumer-key CONSUMER_KEY 
-                             --consumer-secret CONSUMER_SECRET 
-                             --token TOKEN 
-                             --token-secret TOKEN_SECRET
-                             --user-name monarisa 
-                             --num-digits 2
-                             --unlock`
-
-を実行します。
+- Copy two .gs files to your GAS, and import `1rgo8rXsxi1DxI_5Xgo_t3irTw1Y5cxl2mGSkbozKsSXf2E_KBBPC3xTF` in library.  
+- Create Twitter app in apps.twitter.com . Callback url is https://script.google.com/d/xxxxYOUR_GAS_URLxxxxxx/usercallback
+- Confiture setup.gas
+- Execute reset function in fav_spam_blocker.gs
+- Execute authorize, copy the URL shown in Log and paste in browser to authorize twitter app.
+- Execute kill_fav_spam to block the spammers.
 
 
