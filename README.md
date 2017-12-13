@@ -21,3 +21,6 @@ Blocking script (Google Apps Script) for Twitter Fav-Spammers
 - Execute block_fav_spam to block the spammers. revert_fav_spam unblocks the accounts, kill_fav_spam performs reporting and blocking.
 
 
+## 説明動画    
+[![](http://img.youtube.com/vi/ByQJwK09F-g/0.jpg)](https://www.youtube.com/watch?v=ByQJwK09F-g)  
+
