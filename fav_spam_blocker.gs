@@ -14,16 +14,34 @@ function authCallback(request) {
   return twitter.authCallback(request);
 }
 
-
 var endpoint_block = "https://api.twitter.com/1.1/blocks/create.json"
 var endpoint_revert = "https://api.twitter.com/1.1/blocks/destroy.json"
 var endpoint_kill = "https://api.twitter.com/1.1/users/report_spam.json"
-
+var endpoint_search = "https://api.twitter.com/1.1/search/tweets.json?lang=ja&q="
 
 function zfill(number, size) {
   number = number.toString();
   while (number.length < size) number = "0" + number;
   return number;
+}
+
+function search_block() {
+  service  = twitter.getService();
+  result = service.fetch(endpoint_search + encodeURIComponent(search_name));
+  data = JSON.parse(result);
+  numbers = data["statuses"].length;   
+  for (i=0; i<numbers; i++) {
+    
+    target_screen_name = data["statuses"][i]["user"]["screen_name"];
+    response = service.fetch(endpoint_block, {
+      method: "POST",
+      payload: {screen_name:target_screen_name,
+                skip_status:"true"},
+      muteHttpExceptions: true
+    });
+    Logger.log(response)
+  }
+
 }
 
 // ブロックを実行 セッティングに従ったブロックを行う。  Execute blocking.
