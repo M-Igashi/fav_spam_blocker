@@ -7,8 +7,10 @@ var twitter = TwitterWebService.getInstance(
 
 // ブロックしたいクソ野郎
 
-var user_name = "Noamin"  // クソ野郎の名前
-var num_digits = 2  //クソ野郎の連番桁数
+var user_name = "ptwptw"  // クソ野郎のスクリーンネーム @ptwptw300 とかの @と300を抜いたやつ
+var num_digits = 3  //クソ野郎の連番桁数
+
+var search_name = "このギター講師の動画みて練習してます！残念ながらこの方は去年も12月に退職されたみたいです・・・会いたかった"  //クソ野郎のツイートの文字列 連続した全角文字列が引っかけやすい。一度twitterで検索してみるといい。
 
 
 /*
