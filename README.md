@@ -10,6 +10,7 @@ Blocking script (Google Apps Script) for Twitter Fav-Spammers
 - fav_spam_blocker.gsのresetを実行します。
 - authorizeを実行、ログに表示されるURLをブラウザにコピペしてアプリを認証します。
 - block_fav_spamを実行してスパマーをブロックします。revert_fav_spamはブロック解除、kill_fav_spamはブロックと同時に報告も行います。
+- search_blockはブロックしたいクソ野郎のつぶやき文字列を検索し、同じつぶやきをしているマルチアカウントをブロックする機能です。連番でないスパムアカウントに有効です。一度Twitterの検索で文字列を試して引っかかるアカウントを調べてから実行してみましょう。できるだけ長い連続する全角文字列が精度が高いです。途中に半角が入ると精度が落ちます。
 
 ------------------
 
