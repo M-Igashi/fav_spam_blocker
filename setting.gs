@@ -1,16 +1,17 @@
 // TwitterのAPIキーの入力
 
 var twitter = TwitterWebService.getInstance(
-  "xxxxxxxxxx",  // Twitterのcommercial API Keyを入れる。クオテーションの中にスペースが入るとエラーになるので入らないように気をつける。  Input API key
-  "yyyyyyyyyyyyyyyyyy"  // Twitterのcommercial API secretを入れる。  Input API secret
+  "XXXXXXXXXXXXXXXXXXXX",  // Twitterのcommercial API Keyを入れる。クオテーションの中にスペースが入るとエラーになるので入らないように気をつける。  Input API key
+  "YYYYYYYYYYYYYYYYYYYYYYYYYY"  // Twitterのcommercial API secretを入れる。  Input API secret
 );
 
 // ブロックしたいクソ野郎
 
-var user_name = "ptwptw"  // クソ野郎のスクリーンネーム @ptwptw300 とかの @と300を抜いたやつ
-var num_digits = 3  //クソ野郎の連番桁数
+var user_name = "hiromasa5"  // クソ野郎のスクリーンネーム @hiromasa5298 とかの @と298を抜いたやつ
+var num_digits = 3 //クソ野郎の連番桁数　上記のクソ野郎の抜いた桁数 298 --> 3
 
-var search_name = "このギター講師の動画みて練習してます！残念ながらこの方は去年も12月に退職されたみたいです・・・会いたかった"  //クソ野郎のツイートの文字列 連続した全角文字列が引っかけやすい。一度twitterで検索してみるといい。
+// 検索ブロック用設定
+var search_name = "はじめてみましたー！みなさんよろしくね"  //クソ野郎のツイートの文字列 連続した全角文字列が引っかけやすい。一度twitterで検索してみるといい。
 
 
 /*
