@@ -14,10 +14,12 @@ function authCallback(request) {
   return twitter.authCallback(request);
 }
 
+
 var endpoint_block = "https://api.twitter.com/1.1/blocks/create.json"
 var endpoint_revert = "https://api.twitter.com/1.1/blocks/destroy.json"
 var endpoint_kill = "https://api.twitter.com/1.1/users/report_spam.json"
-var endpoint_search = "https://api.twitter.com/1.1/search/tweets.json?lang=ja&q="
+var endpoint_search = "https://api.twitter.com/1.1/search/tweets.json?lang=ja&count=100&q="
+
 
 function zfill(number, size) {
   number = number.toString();
@@ -25,6 +27,7 @@ function zfill(number, size) {
   return number;
 }
 
+// Tweet検索からアカウントの一斉ブロック  Execute tweet search blocking.
 function search_block() {
   service  = twitter.getService();
   result = service.fetch(endpoint_search + encodeURIComponent(search_name));
